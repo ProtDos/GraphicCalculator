@@ -178,19 +178,19 @@ Love my work? Consider donating ❤:
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/ProtDos/Veilo-Site.svg?style=for-the-badge
-[contributors-url]: https://github.com//ProtDos/Veilo-Site/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/ProtDos/GraphicCalculator.svg?style=for-the-badge
+[contributors-url]: https://github.com//ProtDos/GraphicCalculator/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/ProtDos/Veilo-Site.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/ProtDos/GraphicCalculator.svg?style=for-the-badge
 [forks-url]: hhttps://github.com/ProtDos/GraphicCalculator/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/ProtDos/Veilo-Site.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/ProtDos/GraphicCalculator.svg?style=for-the-badge
 [stars-url]: hhttps://github.com/ProtDos/GraphicCalculator/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/ProtDos/Veilo-Site.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/ProtDos/GraphicCalculator.svg?style=for-the-badge
 [issues-url]: hhttps://github.com/ProtDos/GraphicCalculator/issues
 
-[license-shield]: https://img.shields.io/github/license/ProtDos/Veilo-Site.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/ProtDos/GraphicCalculator.svg?style=for-the-badge
 [license-url]: hhttps://github.com/ProtDos/GraphicCalculator/blob/master/LICENSE.txt
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
