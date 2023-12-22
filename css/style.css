@@ -1,0 +1,100 @@
+body,
+html {
+    margin: 0;
+    overflow: hidden;
+    user-select: none;
+}
+
+canvas {
+    display: block;
+    background-color: #fff;
+}
+
+.grid {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-line {
+    stroke: #ddd;
+    stroke-width: 1;
+}
+
+.axis-line {
+    stroke: #333;
+    stroke-width: 2;
+}
+
+.axis-label {
+    fill: #333;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-anchor: middle;
+}
+
+#ttext {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    user-select: none;
+    z-index: 9999;
+    /* center the item horizontally */
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* make space at the top (around 10%) */
+    top: 5%;
+}
+
+
+#ttext2_1 {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    user-select: none;
+    z-index: 9999;
+    /* center the item horizontally */
+    left: 90%;
+    transform: translateX(-20%);
+    
+
+    width: 8%;
+    top: 5%;
+
+    font-family: "Source Sans Pro";
+    font-weight: 600;
+    font-size: 24px;
+    color: white;
+    z-index: 998;
+}
+
+#ttext2_2 {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    user-select: none;
+    z-index: 9999;
+    /* center the item horizontally */
+    left: 90%;
+    transform: translateX(-20%);
+
+    width: 8%;
+    
+
+    /* make space at the top (around 10%) */
+    top: 12%;
+
+    font-family: "Source Sans Pro";
+    font-weight: 600;
+    font-size: 24px;
+    color: white;
+    z-index: 998;
+}

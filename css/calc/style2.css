@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap');
+
+#ttext {
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  font-size: 24px;
+  color: white;
+  z-index: 998;
+}
+
+.all{
+    height: 80%;
+    width: 20%;
+    position: absolute;
+    top: 50%;
+    left: 2%; /* Adjusted left position to center the element */
+    transform: translateY(-50%);
+    
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-sizing: border-box; /* Include padding and border in the total width */
+
+    overflow: hidden;
+
+}
+
+.dcg-exppanel{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: -moz-scrollbars-none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.dcg-expressionitem, 
+.dcg-new-expression, 
+.dcg-expressionlist,
+.dcg-tab,
+.dcg-opened {
+    cursor: default !important;
+}
+
+.text_input {
+    font-size: 14px !important;
+}
+
+/* Popup */
+
+.successPopup {
+  position: fixed;
+  z-index: 999;
+}
+
+.errorPopup {
+  position: fixed;
+  z-index: 999;
+}
+
+.popup {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 400px;
+  height: 100px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  overflow: hidden;
+  
+  background-color: #18c73e;
+  border-radius: 10px;
+  
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.popup2 {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 400px;
+  height: 100px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  overflow: hidden;
+  
+  background-color: #db1313;
+  border-radius: 10px;
+  
+  opacity: 0;  /* Hidden by default */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.popup svg {
+  margin-left: 35px;
+}
+
+.popup p {
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  font-size: 24px;
+  color: white;
+  margin-left: 15px;
+}
+
+.popup .timeIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  height: 7px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.popup2 svg {
+  margin-left: 35px;
+}
+
+.popup2 p {
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  font-size: 24px;
+  color: white;
+  margin-left: 15px;
+}
+
+.popup2 .timeIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  height: 7px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dcg-header {
+  text-align: center;
+  text-decoration: none;
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.buttonClass {
+  font-size:22px;
+  font-family: "Source Sans Pro";
+  width: 170px;
+  height: 55px;;
+  align-items: center;
+  border-width:1px;
+  color:#fff;
+  border-color:#18ab29;
+  text-decoration: none;
+  border-top-left-radius:28px;
+  border-top-right-radius:28px;
+  border-bottom-left-radius:28px;
+  border-bottom-right-radius:28px;
+  text-shadow: 1px 1px 0px #2f6627;
+  background:#44c767;
+}
+
+.buttonClass:hover {
+  background: #72e936;
+  border-color: #72e936;
+}
+
+.buttonDiv {
+  padding-top: 5%;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  font-size: 24px;
+}
+
+/* ---------------------------------------------------------------- */
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the last value (0.5) for the desired transparency */
+  z-index: 9998; /* Adjust the z-index value to make sure it covers other elements */
+  
+  visibility: hidden;
+}
+
+#imagePopup {
+  height: 80%;
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 20%; /* Adjusted left position to center the element */
+  transform: translateY(-50%);
+
+  z-index: 9999;
+
+  background-color: #fff;
+  
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-sizing: border-box; /* Include padding and border in the total width */
+
+  overflow: hidden;
+
+  visibility: hidden;
+
+  align-items: center;
+}
+
+#image_self {
+  visibility: hidden;
+}
+
+#cross_img {
+  /* position at top right of div */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#cross_img:hover {
+  cursor: pointer;
+}
