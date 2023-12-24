@@ -18530,7 +18530,7 @@
                         o = e("underscore"),
                         s = i(r, function(e, i) {
                             e.init = function(e) {
-                                i.init.call(this), this.workers = [], this.maxWorkers = e, this.workerURL = n(), this.allowedToSpawnWorker() ? t.log("WorkerPool: allowed to use " + this.maxWorkers + " workers.") : t.log("WorkerPool: will not try to use workers")
+                                i.init.call(this), this.workers = [], this.maxWorkers = e, this.workerURL = n(), this.allowedToSpawnWorker() ? null : null
                             }, e.allowedToSpawnWorker = function() {
                                 return this.workerURL && this.workers.length < this.maxWorkers
                             }, e.killWorker = function(e) {
