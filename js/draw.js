@@ -58,6 +58,8 @@ function startDrawing(e) {
 
 function draw(e) {
 
+    /*  This was just for debugging purposes. */
+    /*
     var ell1 = document.getElementById('ttext2_1');
     var ell2 = document.getElementById('ttext2_2');
 
@@ -73,10 +75,9 @@ function draw(e) {
 
     // The intersection point is (xIntersection, yIntersection)
     console.log("Intersection Point: (" + xIntersection + ", " + yIntersection + ")");
+    */
 
     if (isMoving) {
-        console.log("moving");
-
         moveObjects(pos_x, pos_y);
 
         var rect = canvas.getBoundingClientRect();
@@ -107,8 +108,8 @@ function draw(e) {
     var x = (e.clientX - rect.left) * scaleX;
     var y = (e.clientY - rect.top) * scaleY;
 
-    x /= scale; // Adjust for scale
-    y /= scale; // Adjust for scale
+    x /= scale;
+    y /= scale;
 
     context.beginPath();
     context.moveTo(prevX, prevY);
@@ -129,21 +130,14 @@ function convertCursorPosition(x, y) {
     const centerX = window.innerWidth / 2 + pos_x;
     const centerY = window.innerHeight / 2 + pos_y;
 
-    // Calculate the new coordinates with the center of the screen as the origin
     const newX = x - centerX;
     const newY = (y - centerY) * -1;
 
-    // Return the updated coordinates
     return { x: newX / 20, y: newY / 20};
 }
 
 
 function better_array(arr) {
-    console.log("Original:");
-    console.log(arr); // Log the original array to the console
-
-    // Transform coordinates so that the very top left pixel is -50, 50,
-    // top right is 50, 50, bottom right is 50, -50, and bottom left is -50, -50
     var new_arr = [];
     for (var i = 0; i < arr.length; i++) {
         new_arr.push(convertCursorPosition(arr[i].x, arr[i].y));
@@ -158,10 +152,6 @@ function stopDrawing() {
     }
     if (isDrawing) {
         const new_data_points = better_array(data_points);
-        console.log("New data points: ");
-        console.log(new_data_points);
-        console.log("Old data points: ");
-        console.log(data_points);
         isDrawing = false;
 
         if (data_points.length > 0) {
@@ -186,9 +176,6 @@ function stopDrawing() {
             })
             .then(response => response.json())
             .then(data => {
-                console.log('Server response:', data);
-                console.log(data["equations"]);
-
                 var contentDiv = document.getElementById("content_from_api");
                 contentDiv.innerHTML = data["cd"];
 
@@ -199,7 +186,6 @@ function stopDrawing() {
 
             })
             .catch(error => {
-                console.error('Error sending data to server:', error);
                 try {
                     var da_element = document.getElementById('text-0');
                     da_element.textContent = "";
@@ -211,8 +197,8 @@ function stopDrawing() {
                 popup.style.opacity = '1';
             
                 setTimeout(() => {
-                popup.style.bottom = '-100px';
-                popup.style.opacity = '0';
+                    popup.style.bottom = '-100px';
+                    popup.style.opacity = '0';
                 }, 3000);
                 
             });
@@ -243,20 +229,21 @@ function drawAxes() {
     var xAxisLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
     xAxisLabel.setAttribute("class", "axis-label");
     xAxisLabel.setAttribute("x", canvas.width - 10);
-    xAxisLabel.setAttribute("y", canvas.height / 2);
+    xAxisLabel.setAttribute("y", canvas.height / 2 + pos_y - 10);
     xAxisLabel.textContent = "X";
     gridSvg.appendChild(xAxisLabel);
 
     var yAxisLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
     yAxisLabel.setAttribute("class", "axis-label");
-    yAxisLabel.setAttribute("x", canvas.width / 2);
-    yAxisLabel.setAttribute("y", 14);
+    yAxisLabel.setAttribute("x", canvas.width / 2 + pos_x + 15);
+    yAxisLabel.setAttribute("y", 15);
     yAxisLabel.textContent = "Y";
     gridSvg.appendChild(yAxisLabel);
 }
 
 
 function redrawElements() {
+    // This function isn't needed at the moment.
     for (var i = 0; i < drawnElements.length; i++) {
         var element = drawnElements[i];
 
@@ -269,8 +256,6 @@ function redrawElements() {
             context.lineTo(element.x, element.y);
             context.stroke();
         }
-
-        // Add more conditions for other types of elements if needed
 
     }
 }

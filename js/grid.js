@@ -17,7 +17,7 @@ function drawGrid() {
     // console.log(pos_x);
     // console.log(pos_y);
 
-    for (var x = pos_x; x < canvas.width; x += gridSize) {
+    for (var x = pos_x - canvas.width; x < canvas.width; x += gridSize) {
         var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
         line.setAttribute("class", "grid-line");
         line.setAttribute("x1", x);
@@ -27,7 +27,7 @@ function drawGrid() {
         gridSvg.appendChild(line);
     }
 
-    for (var y = pos_y; y < canvas.height; y += gridSize) {
+    for (var y = pos_y - canvas.height; y < canvas.height; y += gridSize) {
         var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
         line.setAttribute("class", "grid-line");
         line.setAttribute("x1", 0);
