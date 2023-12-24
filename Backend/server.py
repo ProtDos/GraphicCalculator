@@ -1,8 +1,9 @@
-import base64
-
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from transform import get_equations, get_code
+import threading
+import uuid
+import json
 
 app = Flask(__name__)
 CORS(app)
@@ -86,7 +87,23 @@ def get_func():
         x.append(round(float(item["x"]), 2))
         y.append(round(float(item["y"]), 2))
 
-    eqs, encoded_string = get_equations(x, y)
+    print([(xx, y[i]) for i, xx in enumerate(x)])
+
+    id_ = str(uuid.uuid4())
+
+    plot_thread = threading.Thread(target=get_equations, args=(x, y, id_,))
+    plot_thread.start()
+    plot_thread.join()
+
+    # eqs, encoded_string = get_equations(x, y)
+
+    file_path = f'files/{id_}.json'
+
+    with open(file_path, 'r') as file:
+        json_data = json.load(file)
+
+    eqs = json_data["eqs"]
+    encoded_string = json_data["image_base64"]
 
     eqs = convert(eqs)
 

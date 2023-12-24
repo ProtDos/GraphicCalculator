@@ -1,12 +1,16 @@
 import io
 import base64
 import random
+import matplotlib
+matplotlib.use('Agg')
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score
+import json
 
 
-def get_equations(x_raw, y_raw):
+
+def get_equations(x_raw, y_raw, id_):
     # sorted_points = sorted([(x, y, (x**2 + y**2)**0.5) for x, y in zip(x_raw, y_raw)], key=lambda point: point[2])
 
     # Extract sorted x and y values
@@ -17,7 +21,7 @@ def get_equations(x_raw, y_raw):
     x = np.array(new_x)
     y = np.array(new_y)
 
-
+    plt.clf()
     fig = plt.figure(random.randint(1, 5000), figsize=(11, 8))
 
     # Create a subplot
@@ -43,7 +47,7 @@ def get_equations(x_raw, y_raw):
         coefficients = np.polyfit(x_chunk, y_chunk, degree)
         poly_equation = np.poly1d(coefficients)
 
-        # print(poly_equation)
+        print(str(poly_equation))
 
         eqs.append(str(poly_equation))
 
@@ -75,7 +79,17 @@ def get_equations(x_raw, y_raw):
 
     image_base64 = base64.b64encode(image_stream.getvalue()).decode('utf-8')
 
-    return eqs, image_base64
+    data = {
+        "eqs": eqs,
+        "image_base64": image_base64
+    }
+
+    with open(f"files/{id_}.json", 'w') as file:
+        json.dump(data, file, indent=4)
+
+    return True
+
+    # return eqs, image_base64
 
 
 def get_code(eqs: list):
