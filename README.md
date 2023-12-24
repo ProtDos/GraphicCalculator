@@ -73,32 +73,55 @@ Here is a list of any major frameworks/libraries used to bootstrap my project:
 
 * [![Vue][Vue.js]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ### Demo
-
+<div style="align-items: center; justify-content: center; display: flex;">
   <img src="https://github.com/ProtDos/GraphicCalculator/assets/69071809/23255be5-c947-45a3-9c40-c044758d0966">
 
   <div><p></p></div>
+  
   <img src="https://github.com/ProtDos/GraphicCalculator/assets/69071809/4efa3d92-3e6b-4d51-8e98-9d51151bf6a8">
 
+  <div><p></p></div>
+  <div><p></p></div>
+  
+  <img src="https://github.com/ProtDos/GraphicCalculator/assets/69071809/123d66fb-102e-43ab-850d-6682ee2183e5">
+  
+  <div><p></p></div> 
+  
+  <img src="https://github.com/ProtDos/GraphicCalculator/assets/69071809/6995f66a-0551-4b36-a89b-8508577ed899">
+  
+  <div><p></p></div>
+  <div><p></p></div>
+
+  <img src="https://github.com/ProtDos/GraphicCalculator/assets/69071809/79a49140-29e0-496e-9d4b-86634e2eb901" style="height: auto; max-width: 100%;">
 </div>
 
 You can check out the whole site [here](https://protdos.github.io/GraphicCalculator/).
 
 ## Features
 
-* Responsive design for optimal viewing on various devices.
-* Clean and modern layout to showcase the app
+* Clean and modern layout
 * Lightweight and fast-loading, ensuring a smooth user experience.
 * No third parties loaded
+* Fast
 
 ## Getting Started
-_Coming soon..._
+### Backend
+Follow these steps to run the backend:
+
+```bash
+git clone https://github.com/ProtDos/GraphicCalculator
+cd GraphicCalculator/Backend
+pip install requirements.txt
+python3 server.py
+```
+
+> Make sure the port 80 on your machine is open, as Flask will use it. Also have Python preinstalled.
 
 
 ## Usage
